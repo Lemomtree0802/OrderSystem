@@ -9,5 +9,8 @@
     <resultMap id="administratorMap" type="com.lemontree0802.pojo.Administrator">
         <result column="created_at" property="createdAt" />
     </resultMap>
+    <select id="selectAll" resultMap="administratorMap">
+        SELECT * FROM administrators;
+    </select>
 
 </mapper>

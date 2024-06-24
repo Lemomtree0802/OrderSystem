@@ -1,25 +1,32 @@
 package com.lemontree0802.command;
 
+import com.lemontree0802.mapper.MerchantMapper;
 import com.lemontree0802.mapper.UserMapper;
+import com.lemontree0802.pojo.Merchant;
 import com.lemontree0802.pojo.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import java.util.List;
-
-public class InfoCommand implements Command {
+public class InfoCommand {
     private final SqlSessionFactory sqlSessionFactory;
 
     public InfoCommand(SqlSessionFactory sqlSessionFactory) {
         this.sqlSessionFactory = sqlSessionFactory;
     }
 
-    @Override
-    public void execute() {
+    public void execute(String identity, String name) {
         try (SqlSession session = sqlSessionFactory.openSession()) {
-            UserMapper mapper = session.getMapper(UserMapper.class);
-            List<User> users = mapper.selectAll();
-            users.forEach(user -> System.out.println(user.getName()));
+            if (identity.equals("student") || identity.equals("employee")) {
+                UserMapper mapper = session.getMapper(UserMapper.class);
+                User currentUser = mapper.selectByName(name);
+                currentUser.printMyInfo();
+            } else if (identity.equals("merchant")) {
+                MerchantMapper mapper = session.getMapper(MerchantMapper.class);
+                Merchant currentMerchant = mapper.selectByName(name);
+                currentMerchant.printMyInfo();
+            }
+
+
         }
     }
 }

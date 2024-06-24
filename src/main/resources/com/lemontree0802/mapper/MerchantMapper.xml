@@ -9,4 +9,12 @@
         <result column="name" property="name" />
         <result column="address" property="address" />
     </resultMap>
+    <select id="selectAll" resultType="com.lemontree0802.pojo.Merchant">
+        SELECT *
+        FROM merchants;
+    </select>
+    <select id="selectByName" resultType="com.lemontree0802.pojo.Merchant">
+        SELECT *
+        FROM merchants where name = #{name};
+    </select>
 </mapper>

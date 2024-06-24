@@ -24,4 +24,9 @@
     <select id="selectAll" resultMap="userMap">
         select * from users;
     </select>
+
+    <select id="selectByName" resultMap="userMap">
+        select *
+        from users where name = #{name};
+    </select>
 </mapper>

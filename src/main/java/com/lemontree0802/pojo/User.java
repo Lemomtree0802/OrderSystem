@@ -13,5 +13,12 @@ public class User {
     private String studentOrEmployeeNumber;
     private double balance = 100.00;
 
+    public void printMyInfo() {
+        System.out.print("id:" + id + ", ");
+        System.out.print("name:" + name + ", ");
+        System.out.print("gender:" + gender + ", ");
+        System.out.print("number:" + studentOrEmployeeNumber + ", ");
+        System.out.println("balance:" + Math.round(balance) + ".");
+    }
 }
 
