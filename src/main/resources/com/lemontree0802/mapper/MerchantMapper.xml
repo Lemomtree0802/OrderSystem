@@ -8,6 +8,7 @@
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="address" property="address" />
+        <result column="main_dish" property="mainDish" />
     </resultMap>
     <select id="selectAll" resultType="com.lemontree0802.pojo.Merchant">
         SELECT *

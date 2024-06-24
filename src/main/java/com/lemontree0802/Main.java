@@ -37,51 +37,59 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("您还没登录，请选择您的身份（student, employee, merchant, administrator)：");
         boolean haveChosenType = false;
-        while (!haveChosenType) {
-            identity = scanner.nextLine();
-            if (identityType.contains(identity)) {
-                haveChosenType = true;
-            } else {
-                System.out.println("无效的身份名称，请重新输入：");
-            }
-        }
-
         boolean haveLoggedIn = false;
-        while (!haveLoggedIn) {
-            System.out.println("请输入您的名称：");
-            name = scanner.nextLine();
-
-            SelectExistCommand selectExistCommand = new SelectExistCommand(sqlSessionFactory);
-            if (selectExistCommand.DoesContainName(name, identity)) {
-                System.out.println("登录成功！");
-                haveLoggedIn = true;
-            } else {
-                System.out.println("用户不存在！");
-            }
-        }
-
         while (true) {
+            if (!haveChosenType) {
+                System.out.println("您还没登录，请选择您的身份（student, employee, merchant, administrator)：");
+            }
+            while (!haveChosenType) {
+                identity = scanner.nextLine();
+                if (identityType.contains(identity)) {
+                    haveChosenType = true;
+                } else {
+                    System.out.println("无效的身份名称，请重新输入：");
+                }
+            }
+
+            while (!haveLoggedIn) {
+                System.out.println("请输入您的名称：");
+                name = scanner.nextLine();
+
+                SelectExistCommand selectExistCommand = new SelectExistCommand(sqlSessionFactory);
+                if (selectExistCommand.DoesContainName(name, identity)) {
+                    System.out.println("登录成功！");
+                    haveLoggedIn = true;
+                } else {
+                    System.out.println("用户不存在！");
+                }
+            }
+
+
             System.out.println("请输入命令：");
             String command = scanner.nextLine();
             switch (command) {
-                case "exit":
+                case "exit" -> {
                     scanner.close();
                     System.out.println("退出程序");
                     return;
-                case "my info":
+                }
+                case "my info" -> {
                     InfoCommand infoCommand = new InfoCommand(sqlSessionFactory);
                     infoCommand.execute(identity, name);
-                    break;
-                default:
-                    System.out.println("无效命令");
-                    break;
+                }
+                case "log out" -> {
+                    haveChosenType = false;
+                    haveLoggedIn = false;
+                }
+                default -> System.out.println("无效命令");
             }
-
-
-
         }
+
+
+
+
+
 
 
     }
