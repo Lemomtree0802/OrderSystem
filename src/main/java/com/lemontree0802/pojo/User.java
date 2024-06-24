@@ -11,6 +11,7 @@ public class User {
     private String name;
     private String gender;
     private String studentOrEmployeeNumber;
+    private double balance = 100.00;
 
 }
 
