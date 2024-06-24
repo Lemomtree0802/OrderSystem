@@ -5,12 +5,8 @@ package com.lemontree0802.pojo;
 @lombok.AllArgsConstructor
 @lombok.NoArgsConstructor
 @lombok.ToString
-public class User {
-    // Getters and Setters
+public class Merchant {
     private int id;
     private String name;
-    private String gender;
-    private String studentOrEmployeeNumber;
-
+    private String address;
 }
-

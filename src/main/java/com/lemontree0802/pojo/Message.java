@@ -1,16 +1,15 @@
 package com.lemontree0802.pojo;
 
+import java.sql.Timestamp;
+
 @lombok.Getter
 @lombok.Setter
 @lombok.AllArgsConstructor
 @lombok.NoArgsConstructor
 @lombok.ToString
-public class User {
-    // Getters and Setters
+public class Message {
     private int id;
-    private String name;
-    private String gender;
-    private String studentOrEmployeeNumber;
-
+    private int userId;
+    private String messageText;
+    private Timestamp createdAt;
 }
-

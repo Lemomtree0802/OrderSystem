@@ -2,9 +2,26 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!-- 名称空间-->
 <mapper namespace="com.lemontree0802.mapper.UserMapper">
-    <select id="selectAll" resultType="com.lemontree0802.pojo.User">
+
+    <!--
+         id:唯一标识
+         type:映射的类型
+    -->
+    <resultMap id="userMap" type="com.lemontree0802.pojo.User">
+
+        <!--
+             id:完成主键映射
+                 column:表的列名
+                 property:实体的属性名
+             result:完成一般字段的映射
+        -->
+        <result column="student_or_employee_number" property="studentOrEmployeeNumber" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="userMap">
         select * from users;
     </select>
 </mapper>
