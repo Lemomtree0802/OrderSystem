@@ -14,7 +14,7 @@ public class Merchant {
     public void printMyInfo() {
         System.out.print("id:" + id + ", ");
         System.out.print("name:" + name + ", ");
-        System.out.print("name:" + address + ", ");
-        System.out.println("name:" + mainDish + ".");
+        System.out.print("address:" + address + ", ");
+        System.out.println("mainDish:" + mainDish + ".");
     }
 }

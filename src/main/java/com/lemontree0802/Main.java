@@ -74,11 +74,11 @@ public class Main {
                     System.out.println("退出程序");
                     return;
                 }
-                case "my info" -> {
+                case "my info" -> { // 显示我的信息
                     InfoCommand infoCommand = new InfoCommand(sqlSessionFactory);
                     infoCommand.execute(identity, name);
                 }
-                case "log out" -> {
+                case "log out" -> { // 登出
                     haveChosenType = false;
                     haveLoggedIn = false;
                 }
