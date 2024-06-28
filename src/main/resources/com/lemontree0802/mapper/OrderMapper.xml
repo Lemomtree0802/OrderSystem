@@ -24,4 +24,9 @@
         ORDER BY id DESC LIMIT 1;
     </select>
 
+    <select id="selectByUserId" resultMap="orderMap">
+        select *
+        from orders where user_id = #{userId};
+    </select>
+
 </mapper>

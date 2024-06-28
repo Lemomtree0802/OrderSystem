@@ -11,4 +11,10 @@ public interface DishMapper {
 
     // 根据id找到对应菜品
     Dish selectById(int id);
+
+    void merchantCreateDish(int merchantId, double price,
+                            String name, String category,
+                            String description, String imageUrl,
+                            String ingredients, String nutritionInfo,
+                            String allergens);
 }

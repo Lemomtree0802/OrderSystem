@@ -13,4 +13,14 @@
         <result column="review_text" property="reviewText" />
         <result column="created_at" property="createdAt" />
     </resultMap>
+
+    <insert id="userReviewDish">
+        INSERT INTO reviews (user_id, dish_id, rating, review_text)
+        VALUES (#{userId}, #{dishId}, #{rating}, #{reviewText})
+    </insert>
+
+    <insert id="userReviewMerchant">
+        INSERT INTO reviews (user_id, merchant_id, rating, review_text)
+        VALUES (#{userId}, #{merchantId}, #{rating}, #{reviewText})
+    </insert>
 </mapper>

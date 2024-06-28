@@ -15,6 +15,19 @@
         <result column="nutrition_info" property="nutritionInfo" />
     </resultMap>
 
+    <insert id="merchantCreateDish">
+        INSERT INTO dishes (merchant_id, price,
+                            name, category,
+                            description, image_url,
+                            ingredients, nutrition_info,
+                            allergens)
+        VALUES (#{merchantId}, #{price},
+                #{name}, #{category},
+                #{description}, #{imageUrl},
+                #{ingredients}, #{nutritionInfo},
+                #{allergens})
+    </insert>
+
 
     <select id="selectBelongsToMerchant" resultMap="dishMap" >
         select *

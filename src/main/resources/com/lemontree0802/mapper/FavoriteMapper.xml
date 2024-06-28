@@ -11,4 +11,25 @@
         <result column="dish_id" property="dishId" />
         <result column="created_at" property="createdAt" />
     </resultMap>
+
+    <insert id="userFavoriteDish">
+        INSERT INTO favorites (user_id, dish_id)
+        VALUES (#{uerId}, #{dishId});
+    </insert>
+
+    <insert id="userFavoriteMerchant">
+        INSERT INTO favorites (user_id, merchant_id)
+        VALUES (#{uerId}, #{merchantId});
+    </insert>
+
+    <delete id="userDeleteFavoriteDish">
+        DELETE FROM favorites
+        WHERE user_id = #{userId} AND dish_id = #{dishId};
+    </delete>
+
+    <delete id="userDeleteFavoriteMerchant">
+        DELETE FROM favorites
+        WHERE user_id = #{userId} AND merchant_id = #{merchantId};
+    </delete>
+
 </mapper>

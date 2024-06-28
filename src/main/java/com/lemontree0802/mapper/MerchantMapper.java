@@ -10,6 +10,6 @@ public interface MerchantMapper {
     // 完全输入正确名称，才能查询得到
     Merchant selectByName(String name);
 
-    // 模糊查询，比如查询商家名字里带“Mer”的，就会返回所有名字里带“Mer”的商家的列表
+    // 模糊查询，比如查询商家名字里带“Mer”的，就会返回所有名字里带“Mer”的商家类的列表
     List<Merchant> fuzzySearch(String name);
 }
