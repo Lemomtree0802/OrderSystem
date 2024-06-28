@@ -12,5 +12,13 @@
         <result column="category" property="category" />
         <result column="description" property="description" />
         <result column="image_url" property="imageUrl" />
+        <result column="nutrition_info" property="nutritionInfo" />
     </resultMap>
+
+
+    <select id="selectBelongsToMerchant" resultMap="dishMap" >
+        select *
+        from dishes
+        where merchant_id = #{merchantId};
+    </select>
 </mapper>

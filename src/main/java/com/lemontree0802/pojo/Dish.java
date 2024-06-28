@@ -13,4 +13,7 @@ public class Dish {
     private String category;
     private String description;
     private String imageUrl;
+    private String ingredients;
+    private String nutritionInfo;
+    private String allergens;
 }
