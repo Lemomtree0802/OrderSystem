@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DishMapper {
 
-    // 通过merchantId在dishes表中找到属于该商家的菜品，返回菜品列表
+    // 通过merchantId在dishes表中找到属于该商家的菜品，返回菜品类列表
     List<Dish> selectBelongsToMerchant(int merchantId);
 
     // 根据id找到对应菜品
@@ -17,4 +17,10 @@ public interface DishMapper {
                             String description, String imageUrl,
                             String ingredients, String nutritionInfo,
                             String allergens);
+
+    // 商家更新菜品价格
+    void merchantUpdateDishPrice(int dishId, double price);
+
+    // 商家更新菜品分类
+    void merchantUpdateDishCategory(int dishId, String category);
 }

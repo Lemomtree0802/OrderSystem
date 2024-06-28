@@ -10,15 +10,18 @@
         <result column="address" property="address" />
         <result column="main_dish" property="mainDish" />
     </resultMap>
+    
     <select id="selectAll" resultMap="merchantMap">
         SELECT *
         FROM merchants;
     </select>
+
     <select id="selectByName" resultMap="merchantMap">
         SELECT *
         FROM merchants
         WHERE name = #{name};
     </select>
+
     <select id="fuzzySearch" resultMap="merchantMap">
         SELECT *
         FROM merchants

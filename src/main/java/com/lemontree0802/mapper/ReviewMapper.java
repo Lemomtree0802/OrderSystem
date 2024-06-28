@@ -7,4 +7,7 @@ public interface ReviewMapper {
 
     // 用户输入对merchant的评价
     void userReviewMerchant(int userId, int merchantId, int rating, int reviewText);
+
+    // 一个菜品的总收藏量
+    int numberOfReviews(int dishId);
 }

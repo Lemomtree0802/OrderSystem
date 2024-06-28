@@ -12,7 +12,7 @@
         <result column="price" property="price" />
     </resultMap>
 
-    <insert id="userOrderDetail">
+    <insert id="insertUserOrderDetail">
         insert into order_details (order_id, dish_id, quantity, price)
         values (#{orderId}, #{dishId}, #{quantity}, #{price})
     </insert>

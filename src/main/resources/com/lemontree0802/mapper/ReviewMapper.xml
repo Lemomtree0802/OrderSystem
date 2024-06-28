@@ -23,4 +23,10 @@
         INSERT INTO reviews (user_id, merchant_id, rating, review_text)
         VALUES (#{userId}, #{merchantId}, #{rating}, #{reviewText})
     </insert>
+
+    <select id="numberOfReviews" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM reviews
+        WHERE dish_id = #{dishId};
+    </select>
 </mapper>

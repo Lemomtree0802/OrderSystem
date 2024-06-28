@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 public class Favorite {
     private int id;
     private int userId;
-    private Integer merchantId;
-    private Integer dishId;
+    private int merchantId;
+    private int dishId;
     private Timestamp createdAt;
 }

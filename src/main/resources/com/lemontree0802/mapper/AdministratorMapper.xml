@@ -9,6 +9,17 @@
     <resultMap id="administratorMap" type="com.lemontree0802.pojo.Administrator">
         <result column="created_at" property="createdAt" />
     </resultMap>
+
+    <delete id="DeleteUser">
+        DELETE FROM users
+        WHERE id = #{userId};
+    </delete>
+
+    <delete id="DeleteMerchant">
+        DELETE FROM merchants
+        WHERE id = #{merchantId};
+    </delete>
+
     <select id="selectAll" resultMap="administratorMap">
         SELECT * FROM administrators;
     </select>

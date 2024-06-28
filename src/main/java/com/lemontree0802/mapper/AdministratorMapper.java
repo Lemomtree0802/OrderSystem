@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface AdministratorMapper {
 
+    List<Administrator> selectAll();
 
-    public List<Administrator> selectAll();
+    void DeleteUser(int user_id);
+
+    void DeleteMerchant(int merchant_id);
 }

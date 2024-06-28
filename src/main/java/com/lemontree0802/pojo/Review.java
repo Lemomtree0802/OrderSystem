@@ -10,8 +10,8 @@ import java.sql.Timestamp;
 public class Review {
     private int id;
     private int userId;
-    private Integer merchantId;
-    private Integer dishId;
+    private int merchantId;
+    private int dishId;
     private int rating;
     private String reviewText;
     private Timestamp createdAt;

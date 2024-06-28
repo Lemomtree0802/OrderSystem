@@ -15,7 +15,7 @@
         <result column="nutrition_info" property="nutritionInfo" />
     </resultMap>
 
-    <insert id="merchantCreateDish">
+    <insert id="merchantCreateDish" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO dishes (merchant_id, price,
                             name, category,
                             description, image_url,
@@ -25,8 +25,20 @@
                 #{name}, #{category},
                 #{description}, #{imageUrl},
                 #{ingredients}, #{nutritionInfo},
-                #{allergens})
+                #{allergens});
     </insert>
+
+    <update id="merchantUpdateDishPrice">
+        UPDATE dishes
+        SET price = #{price}
+        WHERE id = #{dishId};
+    </update>
+
+    <update id="merchantUpdateDishCategory">
+        UPDATE dishes
+        SET category = #{category}
+        WHERE id = #{dishId};
+    </update>
 
 
     <select id="selectBelongsToMerchant" resultMap="dishMap" >
