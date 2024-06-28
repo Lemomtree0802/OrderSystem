@@ -11,4 +11,9 @@
         <result column="quantity" property="quantity" />
         <result column="price" property="price" />
     </resultMap>
+
+    <insert id="userOrderDetail">
+        insert into order_details (order_id, dish_id, quantity, price)
+        values (#{orderId}, #{dishId}, #{quantity}, #{price})
+    </insert>
 </mapper>

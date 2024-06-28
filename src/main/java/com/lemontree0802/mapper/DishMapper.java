@@ -8,4 +8,7 @@ public interface DishMapper {
 
     // 通过merchantId在dishes表中找到属于该商家的菜品，返回菜品列表
     List<Dish> selectBelongsToMerchant(int merchantId);
+
+    // 根据id找到对应菜品
+    Dish selectById(int id);
 }

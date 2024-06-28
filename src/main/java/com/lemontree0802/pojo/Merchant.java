@@ -11,10 +11,12 @@ public class Merchant {
     private String address;
     private String mainDish;
 
-    public void printMyInfo() {
+    public void printMerchantInfo() {
         System.out.print("id:" + id + ", ");
         System.out.print("name:" + name + ", ");
         System.out.print("address:" + address + ", ");
-        System.out.println("mainDish:" + mainDish + ".");
+        System.out.println("mainDish:" + mainDish);
     }
+
+
 }

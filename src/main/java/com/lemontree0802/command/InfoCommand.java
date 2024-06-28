@@ -23,7 +23,7 @@ public class InfoCommand {
             } else if (identity.equals("merchant")) {
                 MerchantMapper mapper = session.getMapper(MerchantMapper.class);
                 Merchant currentMerchant = mapper.selectByName(name);
-                currentMerchant.printMyInfo();
+                currentMerchant.printMerchantInfo();
             }
 
 

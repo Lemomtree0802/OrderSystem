@@ -12,4 +12,16 @@
         <result column="created_at" property="createdAt" />
         <result column="updated_at" property="updatedAt" />
     </resultMap>
+
+    <insert id="userOrder">
+        insert into orders (user_id, merchant_id, status)
+        values (#{userId}, #{merchantId}, #{status});
+    </insert>
+
+    <select id="selectTheLatestOrder" resultMap="orderMap">
+        SELECT *
+        FROM orders
+        ORDER BY id DESC LIMIT 1;
+    </select>
+
 </mapper>

@@ -18,7 +18,7 @@ public class User {
         System.out.print("name:" + name + ", ");
         System.out.print("gender:" + gender + ", ");
         System.out.print("number:" + studentOrEmployeeNumber + ", ");
-        System.out.println("balance:" + Math.round(balance) + ".");
+        System.out.println("balance:" + Math.round(balance));
     }
 }
 

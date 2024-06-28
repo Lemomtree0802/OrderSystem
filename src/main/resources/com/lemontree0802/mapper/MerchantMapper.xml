@@ -16,6 +16,12 @@
     </select>
     <select id="selectByName" resultMap="merchantMap">
         SELECT *
-        FROM merchants where name = #{name};
+        FROM merchants
+        WHERE name = #{name};
+    </select>
+    <select id="fuzzySearch" resultMap="merchantMap">
+        SELECT *
+        FROM merchants
+        WHERE name like #{name};
     </select>
 </mapper>

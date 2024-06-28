@@ -29,4 +29,5 @@
         select *
         from users where name = #{name};
     </select>
+
 </mapper>

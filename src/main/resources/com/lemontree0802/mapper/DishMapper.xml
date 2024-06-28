@@ -21,4 +21,10 @@
         from dishes
         where merchant_id = #{merchantId};
     </select>
+
+    <select id="selectById" resultMap="dishMap" >
+        select *
+        from dishes
+        where id = #{id};
+    </select>
 </mapper>
